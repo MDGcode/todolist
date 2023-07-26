@@ -22,20 +22,24 @@ export default async function Home() {
 
   return (
     <>
-      <header className="flex justify-between items-center mb-4">
-        <h1 className="text-2xl">Todos</h1>
-        <Link
-          className="border border-slate-300 text-slate-300 px-2 py-1 rounded hover:bg-slate-700 focus-within:bg-slate-700 outline-none"
+      <header className="flex justify-center items-center mb-4 flex-col gap-5">
+        <h1 className="text-3xl flex ">Ce am de facut la IT</h1>
+        
+      
+      <Link
+          className="border border-slate-300 text-slate-300 px-2 py-1 rounded hover:bg-slate-700 focus-within:bg-slate-700 outline-none text-2xl"
           href="/new"
         >
           New
         </Link>
-      </header>
-      <ul className="pl-4">
-        {todos.map(todo => (
-          <TodoItem key={todo.id} {...todo} toggleTodo={toggleTodo} />
-        ))}
-      </ul>
+        </header>
+      <div className="justify-center items-center flex text-xl">
+        <ul className=" pl-4 space-y-2">
+          {todos.map(todo => (
+            <TodoItem key={todo.id} {...todo} toggleTodo={toggleTodo} />
+          ))}
+        </ul>
+      </div>
     </>
   )
 }
